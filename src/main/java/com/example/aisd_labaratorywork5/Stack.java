@@ -30,6 +30,14 @@ public class Stack {
         head = new Node();
     }
 
+    public String getStringStack(){
+        String buffer = " ";
+        for(int i = 1;i<getLength();i++){
+            buffer+=Double.toString(this.getNodeValue(i));
+        }
+        return buffer;
+    }
+
     public Node getNode(int index) {
         //Проверка на отрицательный индекс
         if (index < 1) {
@@ -68,7 +76,7 @@ public class Stack {
         for (int i = 0; i < getLength()-1; i++) {
             temp = temp.next;
         }
-        temp = temp.next.next;
+        temp.next = null;
     }
 
     //Получение длинны списка

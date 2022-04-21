@@ -30,6 +30,14 @@ public class Queue {
         head = new Node();
     }
 
+    public String getStringQueue(){
+        String buffer = " ";
+       for(int i = 1;i<getLength();i++){
+           buffer+=Double.toString(this.getNodeValue(i));
+       }
+       return buffer;
+    }
+
     public Node getNode(int index) {
         //Проверка на отрицательный индекс
         if (index < 1) {

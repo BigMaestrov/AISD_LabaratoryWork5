@@ -10,6 +10,8 @@ import javafx.scene.text.Text;
 import java.util.concurrent.TimeUnit;
 
 public class HelloController {
+    Queue queue = new Queue();
+    Stack stack = new Stack();
     @FXML
     private Button startButton;
 
@@ -23,16 +25,28 @@ public class HelloController {
     private TextField lifotext;
 
     @FXML
-    protected void click() {
-        startButton.setText("process...");
-        System.out.println(input.getText());
-
+    protected void clickAdd() {
+        fifotext.clear();
+        lifotext.clear();
+        double buff;
         String[] array = input.getText().split(" ");
-        for(int i = 0;i< array.length;i++){
-
-            lifotext.appendText("["+i+"]"+array[i]+" ");
-            fifotext.appendText("["+i+"]"+array[i]+" ");
+        for (int i = 0; i < array.length; i++) {
+            buff = Double.parseDouble(array[i]);
+            queue.addNode(buff);
+            stack.addNode(buff);
         }
+        fifotext.appendText((queue.getStringQueue()));
+        lifotext.appendText((stack.getStringStack()));
+    }
 
+    @FXML
+    protected void clickDelete() {
+
+        fifotext.clear();
+        lifotext.clear();
+        queue.deleteNode();
+        stack.deleteNode();
+        fifotext.appendText((queue.getStringQueue()));
+        lifotext.appendText((stack.getStringStack()));
     }
 }

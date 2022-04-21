@@ -25,7 +25,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-
         Application.launch();
         /*
         Scanner scanner = new Scanner(System.in);
