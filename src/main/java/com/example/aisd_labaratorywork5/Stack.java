@@ -32,7 +32,7 @@ public class Stack {
 
     public String getStringStack(){
         String buffer = " ";
-        for(int i = 1;i<getLength();i++){
+        for(int i = 1;i<getLength()+1;i++){
             buffer+=Double.toString(this.getNodeValue(i))+" ";
         }
         return buffer;
@@ -72,11 +72,13 @@ public class Stack {
 
     //Удаление элемента из конца списка
     public void deleteNode() {
-        Node temp = head;
-        for (int i = 0; i < getLength()-1; i++) {
-            temp = temp.next;
+        if (this.getLength()>0) {
+            Node temp = head;
+            for (int i = 0; i < getLength() - 1; i++) {
+                temp = temp.next;
+            }
+            temp.next = null;
         }
-        temp.next = null;
     }
 
     //Получение длинны списка

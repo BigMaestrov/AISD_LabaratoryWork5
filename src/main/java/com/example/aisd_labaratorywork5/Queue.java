@@ -32,7 +32,7 @@ public class Queue {
 
     public String getStringQueue(){
         String buffer = " ";
-       for(int i = 1;i<getLength();i++){
+       for(int i = 1;i<getLength()+1;i++){
            buffer+=Double.toString(this.getNodeValue(i))+" ";
        }
        return buffer;
@@ -71,6 +71,7 @@ public class Queue {
     }
 
     public void deleteNode() {
+        if(this.getLength()>0)
         head = head.next;
     }
 
