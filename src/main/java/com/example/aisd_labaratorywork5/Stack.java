@@ -33,7 +33,7 @@ public class Stack {
     public String getStringStack(){
         String buffer = " ";
         for(int i = 1;i<getLength();i++){
-            buffer+=Double.toString(this.getNodeValue(i));
+            buffer+=Double.toString(this.getNodeValue(i))+" ";
         }
         return buffer;
     }
