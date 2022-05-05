@@ -24,14 +24,25 @@ public class HelloController {
         fifotext.clear();
         lifotext.clear();
         double buff;
+        boolean incomingDataCorrect = true;
         String[] array = input.getText().split(" ");
         for (int i = 0; i < array.length; i++) {
-            buff = Double.parseDouble(array[i]);
-            queue.addNode(buff);
-            stack.addNode(buff);
+            if (!isNumber(array[i])) {
+                incomingDataCorrect = false;
+            }
         }
-        fifotext.appendText((queue.getStringQueue()));
-        lifotext.appendText((stack.getStringStack()));
+        if (array.length > 0 && incomingDataCorrect) {
+            for (int i = 0; i < array.length; i++) {
+                buff = Double.parseDouble(array[i]);
+                queue.addNode(buff);
+                stack.addNode(buff);
+            }
+            fifotext.appendText((queue.getStringQueue()));
+            lifotext.appendText((stack.getStringStack()));
+        }else{
+            System.err.println("uncorrected data");
+            input.clear();
+        }
     }
 
     @FXML
@@ -42,5 +53,13 @@ public class HelloController {
         stack.deleteNode();
         fifotext.appendText((queue.getStringQueue()));
         lifotext.appendText((stack.getStringStack()));
+    }
+
+    public boolean isNumber(String str) {
+        if (str == null || str.isEmpty()) return false;
+        for (int i = 0; i < str.length(); i++) {
+            if (!Character.isDigit(str.charAt(i))) return false;
+        }
+        return true;
     }
 }

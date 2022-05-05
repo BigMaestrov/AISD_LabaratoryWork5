@@ -20,7 +20,6 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 700, 600);
         stage.setTitle("AISD Labaratory 5");
         stage.setScene(scene);
-
         stage.show();
     }
 

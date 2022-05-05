@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="529.0" prefWidth="700.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aisd_labaratorywork5.HelloController">
+<VBox alignment="CENTER" prefHeight="529.0" prefWidth="700.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aisd_labaratorywork5.HelloController">
 
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -35,7 +35,7 @@
            <content>
              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="44.0" prefWidth="658.0">
                   <children>
-                     <TextField fx:id="lifotext" prefHeight="50.0" prefWidth="660.0" />
+                     <TextField fx:id="lifotext" editable="false" prefHeight="50.0" prefWidth="660.0" />
                   </children>
                </AnchorPane>
            </content>
@@ -46,11 +46,19 @@
      <content>
        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="658.0">
             <children>
-               <TextField fx:id="fifotext" layoutY="-1.0" prefHeight="77.0" prefWidth="660.0" />
+               <TextField fx:id="fifotext" editable="false" layoutY="-1.0" prefHeight="77.0" prefWidth="660.0" />
             </children>
          </AnchorPane>
      </content>
    </TitledPane>
 
     <Label fx:id="welcomeText" />
+   <TitledPane animated="false" prefHeight="77.0" prefWidth="660.0" text="Data ">
+     <content>
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="28.0" prefWidth="658.0">
+            <children>
+               <TextField editable="false" layoutX="-2.0" layoutY="-1.0" prefHeight="52.0" prefWidth="660.0" />
+            </children></AnchorPane>
+     </content>
+   </TitledPane>
 </VBox>
